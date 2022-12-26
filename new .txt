@@ -1,0 +1,167 @@
+ else {
+                   // for (int i = 0; i < tweets.getLiked_by().size(); i++) {
+                        if (!tweets.getLiked_by().stream().filter(r->r.getUser_liked().containsKey())) {
+                            Map<String, Boolean> mapObj = new LinkedHashMap<>();
+                            mapObj.put(userName, Boolean.TRUE);
+                            likeobj.setUser_liked(mapObj);
+                            tweets.getLiked_by().add(likeobj);
+                        }
+                        else {
+                            likeobj.getUser_liked().remove(userName);
+                            tweets.getLiked_by().add(likeobj);
+                        }
+                    }
+               // }
+  tweets.getLiked_by().stream().flatMap(r->{
+                                if(r.getUser_liked().containsKey(userName))
+                                    r.getUser_liked().remove(userName);
+                               return r;
+                            });
+							
+							https://devwithus.com/spring-boot-rest-api-security-jwt/
+							tweets.getLiked_by().stream().filter(r->r.getUser_liked().remove(userName))
+							
+							tweets.getLiked_by().stream().filter(r->r.getUser_liked().containsKey(userName)).map(t->t.getUser_liked().remove(userName))
+							
+							
+							
+							
+							 .signWith(SignatureAlgorithm.HS512, secret)
+                .compact();
+				
+				@GetMapping("/login")
+    public ResponseEntity<UserProfile> logging( @RequestBody UserProfile users){
+return new ResponseEntity<>(userServiceImpl.login(users),HttpStatus.OK);
+    }
+	
+	
+	
+	@Bean
+    public ConsumerFactory<String, String> consumerFactory() {
+        Map<String, Object> props = new HashMap<>();
+        props.put(
+          ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, 
+          bootstrapAddress);
+        props.put(
+          ConsumerConfig.GROUP_ID_CONFIG, 
+          groupId);
+        props.put(
+          ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, 
+          StringDeserializer.class);
+        props.put(
+          ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, 
+          StringDeserializer.class);
+        return new DefaultKafkaConsumerFactory<>(props);
+    }
+
+    @Bean
+    public ConcurrentKafkaListenerContainerFactory<String, String> 
+      kafkaListenerContainerFactory() {
+   
+        ConcurrentKafkaListenerContainerFactory<String, String> factory =
+          new ConcurrentKafkaListenerContainerFactory<>();
+        factory.setConsumerFactory(consumerFactory());
+        return factory;
+    }
+}
+5.2. Consuming Messages
+@KafkaListener(topics = "topicName", groupId = "foo")
+public void listenGroupFoo(String message) {
+    System.out.println("Received Message in group foo: " + message);
+}
+We can implement multiple listeners for a topic, each with a different group Id. Furthermore, one 
+		
+
+
+
+
+		
+		
+		.\bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic tweetapp-logs --from-beginning
+		
+		
+		.\bin\windows\kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic tweetapp --from-beginning
+		.\bin\windows\kafka-server-stop.bat
+		
+		.\bin\windows\zookeeper-server-stop.bat
+mvn sonar:sonar -Dsonar.login=541891f0b807276620b0880b1d01543326eb6f5c
+ 
+ .\bin\windows\kafka-topics.bat --list --bootstrap-server localhost:9092
+ 
+ 
+ 1s command prompt (C:\kafka_2.12-2.4.1>.\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties)
+2nd command prompt (C:\kafka_2.12-2.4.1>.\bin\windows\kafka-server-start.bat .\config\server.properties)
+
+	}
+	
+	https://techademy.in/cognizantjrfse/account/landing
+	7c75d9bf7c1743c5
+	Gowsalya.LNU@cognizant.com
+	
+	https://accounts.builder.ai/users/sign_in
+	gowsalya.lnu@mml.local
+	wxinNJdz
+	
+
+Bearer eyJhbGciOiJIUzUxMiJ9.eyJpc3MiOiJSTSIsImlhdCI6MTY1NzIwNjA5OSwiZXhwIjoxNjU3MjA3Mjk5LCJzdWIiOiJSTSJ9.hXg2HKQwJq6VQI1hUWZUK97hQiA-PcTFKsY1XyjqYsmhiRRbBtaRvEVCalmdzAldliwslvQ5lZCZr6rVKRdpQw		
+				
+		 @Override
+    public UserProfile login(UserProfile users) {
+      // UserProfile user_data= userRepo.findById(users.getLogin_id()).isPresent();
+        if(userRepo.findById(users.getLoginid()).isPresent()){
+            return userRepo.findById(users.getLoginid()).get();
+        }
+          throw new UserNotFoundException("User Not Found");
+    }		
+	
+	
+	UserProfile login(UserProfile users);
+				
+				
+				
+				
+				
+				> show dbs
+admin       0.000GB
+config      0.000GB
+local       0.000GB
+tweetAppDB  0.000GB
+> use tweetAppDB
+switched to db tweetAppDB
+> show collections
+tweetTable
+userProfileTable
+> db.tweetTable..remove{()}
+uncaught exception: SyntaxError: missing name after . operator :
+@(shell):1:14
+> db.tweetTable.remove{()}
+uncaught exception: SyntaxError: unexpected token: '{' :
+@(shell):1:20
+> db.tweetTable.remove({})
+WriteResult({ "nRemoved" : 1 })
+> db.userProfileTable.remove({})
+WriteResult({ "nRemoved" : 2 })
+Gowsalya.LNU@cognizant.com
+7c75d9bf7c1743c5
+mvn site
+>mvn surefire-report:report
+
+
+ db.userProfileTable.find({}).pretty()
+ 
+ 
+ 
+ userProfileTable
+ 
+ 
+ 
+ 
+ AccessKey:
+ AKIAX4U3MVB4Z55MMMYG
+ 
+ SecretKey:
+ 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
+ 
+ 
+ 
+ http://tweetapp-ms-ui.s3-website-us-east-1.amazonaws.com/login
